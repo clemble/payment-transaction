@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.clemble.casino.server.payment.PaymentValidationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.clemble.casino.server.payment.PaymentValidationTest

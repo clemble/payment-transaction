@@ -1,0 +1,17 @@
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/repository/MongoServerAccountService.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/repository/PendingTransactionRepository.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/spring/PaymentApplicationInitializer.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/repository/PlayerAccountRepository.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/repository/PaymentTransactionRepository.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/controller/PaymentTransactionServiceController.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/repository/ServerAccountService.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/account/RestServerPlayerAccountService.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/account/ServerPlayerAccountService.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/listener/SystemPlayerAccountCreationEventListener.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/controller/PlayerAccountServiceController.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/MoneyRowMapper.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/listener/SystemPaymentFreezeRequestEventListener.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/listener/SystemPaymentTransactionRequestEventListener.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/account/BasicServerPlayerAccountService.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/spring/PaymentSpringConfiguration.java
+/Users/mavarazy/work/git/clemble/payment-transaction/src/main/java/com/clemble/casino/server/payment/spring/PaymentTransactionApplication.java
