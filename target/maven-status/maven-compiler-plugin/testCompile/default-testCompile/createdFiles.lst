@@ -1,7 +1,0 @@
-com/clemble/casino/server/payment/PaymentTransactionServiceTest.class
-com/clemble/casino/server/payment/PlayerAccountRepositoryTest.class
-com/clemble/casino/server/payment/PaymentTransactionRepositoryTest.class
-com/clemble/casino/server/payment/PaymentSchemaGenerator.class
-com/clemble/casino/server/payment/PaymentValidationTest.class
-com/clemble/casino/server/payment/PlayerAccountRepositoryTest$UpdateTask.class
-com/clemble/casino/server/payment/PaymentSpringConfigurationTest.class

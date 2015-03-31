@@ -40,7 +40,7 @@
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.javassist:javassist:3.18.1-GA" level="project" />
-    <orderEntry type="library" name="Maven: com.clemble.casino.server:common-web:0.17.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="common-web" />
     <orderEntry type="module" module-name="client-common" />
     <orderEntry type="library" name="Maven: com.rabbitmq:amqp-client:3.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.social:spring-social-core:1.1.0.RELEASE" level="project" />
