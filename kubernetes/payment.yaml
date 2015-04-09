@@ -1,0 +1,25 @@
+kind: ReplicationController
+id: payment-controller
+apiVersion: v1beta1
+desiredState:
+  replicas: 1
+  replicaSelector:
+    name: payment
+    version: v1
+  podTemplate:
+    labels:
+      name : payment
+      version: v1
+    desiredState:
+      manifest:
+        containers:
+          - name: payment
+            image: clemble/payment:latest
+            imagePullPolicy : PullAlways
+            ports:
+              - containerPort: 10009
+                hostPort: 10009
+                protocol: TCP
+            labels:
+              name : payment
+              version: v1
