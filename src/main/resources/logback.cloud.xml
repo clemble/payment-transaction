@@ -19,7 +19,7 @@
 
     <appender name="SYSLOG-UDP" class="com.papertrailapp.logback.Syslog4jAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <pattern>%-5level %logger{35}: %m%n%xEx</pattern>
+            <pattern>P:%X{player} T:%X{transactionKey} %-5level %logger{35}: %m%n%xEx</pattern>
         </layout>
 
         <syslogConfig class="org.productivity.java.syslog4j.impl.net.udp.UDPNetSyslogConfig">
