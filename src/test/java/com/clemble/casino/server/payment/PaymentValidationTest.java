@@ -49,7 +49,7 @@ public class PaymentValidationTest {
         PlayerAccount account = new PlayerAccount(player, money, null);
         PlayerAccount saved = accountRepository.save(account);
         // Step 2. Creating appropriate event
-        SystemPaymentFreezeRequestEvent event = new SystemPaymentFreezeRequestEvent(new PendingTransaction(transactionKey, Collections.singleton(new PaymentOperation(player, Money.create(Currency.point, 50), Operation.Credit)), null));
+        SystemPaymentFreezeRequestEvent event = new SystemPaymentFreezeRequestEvent(transactionKey, new PendingTransaction(transactionKey, Collections.singleton(new PaymentOperation(player, Money.create(Currency.point, 50), Operation.Credit)), null));
         // Step 3. Generating exception conditions
         expectedException.expect(ClembleCasinoExceptionMatcherFactory.fromErrors(ClembleCasinoError.PaymentTransactionDebitAndCreditNotMatched));
         freezeRequestEventListener.onEvent(event);

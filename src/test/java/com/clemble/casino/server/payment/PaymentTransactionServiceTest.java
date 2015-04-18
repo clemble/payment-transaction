@@ -69,7 +69,7 @@ public class PaymentTransactionServiceTest {
             .addOperation(new PaymentOperation(playerFrom, amount, Operation.Credit))
             .addOperation(new PaymentOperation(playerTo, amount, Operation.Debit));
 
-        eventListener.onEvent(new SystemPaymentTransactionRequestEvent(paymentTransaction));
+        eventListener.onEvent(new SystemPaymentTransactionRequestEvent(paymentTransaction.getTransactionKey(), paymentTransaction));
 
         Assert.assertEquals(accountTemplate.findOne(playerTo).getMoney(Currency.point).getAmount(), 100 + amount.getAmount());
         Assert.assertEquals(accountTemplate.findOne(playerFrom).getMoney(Currency.point).getAmount(), 100 - amount.getAmount());
