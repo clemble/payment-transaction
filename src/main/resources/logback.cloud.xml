@@ -32,6 +32,8 @@
         </syslogConfig>
     </appender>
 
+    <logger name="org.springframework.amqp.rabbit.listener" level="INFO"/>
+
     <root level="DEBUG">
         <appender-ref ref="FILE" />
         <appender-ref ref="SYSLOG-UDP" />
