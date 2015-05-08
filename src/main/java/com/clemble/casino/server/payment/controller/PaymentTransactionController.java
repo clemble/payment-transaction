@@ -15,11 +15,11 @@ import com.clemble.casino.WebMapping;
 import static com.clemble.casino.payment.PaymentWebMapping.*;
 
 @RestController
-public class PaymentTransactionServiceController implements PaymentTransactionService, ExternalController {
+public class PaymentTransactionController implements PaymentTransactionService, ExternalController {
 
     final private PaymentTransactionRepository paymentTransactionRepository;
 
-    public PaymentTransactionServiceController(final PaymentTransactionRepository paymentTransactionRepository) {
+    public PaymentTransactionController(final PaymentTransactionRepository paymentTransactionRepository) {
         this.paymentTransactionRepository = checkNotNull(paymentTransactionRepository);
     }
 

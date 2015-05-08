@@ -8,20 +8,17 @@ import com.clemble.casino.server.payment.listener.SystemPaymentTransactionReques
 import com.clemble.casino.server.payment.listener.SystemPlayerAccountCreationEventListener;
 import com.clemble.casino.server.payment.repository.*;
 import com.clemble.casino.server.player.notification.ServerNotificationService;
-import com.clemble.casino.server.player.notification.SystemNotificationService;
 import com.clemble.casino.server.player.notification.SystemNotificationServiceListener;
 import com.clemble.casino.server.spring.common.CommonSpringConfiguration;
 import com.clemble.casino.server.spring.common.MongoSpringConfiguration;
 import com.clemble.casino.server.spring.common.PaymentClientSpringConfiguration;
 import static com.clemble.casino.server.spring.common.PaymentClientSpringConfiguration.Default.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
@@ -34,8 +31,8 @@ import org.springframework.context.annotation.Import;
 
 import com.clemble.casino.server.payment.account.ServerPlayerAccountService;
 import com.clemble.casino.server.spring.common.SpringConfiguration;
-import com.clemble.casino.server.payment.controller.PaymentTransactionServiceController;
-import com.clemble.casino.server.payment.controller.PlayerAccountServiceController;
+import com.clemble.casino.server.payment.controller.PaymentTransactionController;
+import com.clemble.casino.server.payment.controller.PlayerAccountController;
 import org.springframework.data.mongodb.repository.support.MongoRepositoryFactory;
 
 import java.util.HashMap;
@@ -45,15 +42,15 @@ import java.util.HashMap;
 public class PaymentSpringConfiguration implements SpringConfiguration {
 
     @Bean
-    public PaymentTransactionServiceController paymentTransactionController(PaymentTransactionRepository paymentTransactionRepository) {
-        return new PaymentTransactionServiceController(paymentTransactionRepository);
+    public PaymentTransactionController paymentTransactionController(PaymentTransactionRepository paymentTransactionRepository) {
+        return new PaymentTransactionController(paymentTransactionRepository);
     }
 
     @Bean
-    public PlayerAccountServiceController playerAccountController(
+    public PlayerAccountController playerAccountController(
         ServerAccountService accountTemplate,
         ServerPlayerAccountService playerAccountService) {
-        return new PlayerAccountServiceController(playerAccountService, accountTemplate);
+        return new PlayerAccountController(playerAccountService, accountTemplate);
     }
 
     @Bean
@@ -122,7 +119,7 @@ public class PaymentSpringConfiguration implements SpringConfiguration {
 
     @Bean
     public SimpleMessageListenerContainer accountServiceListener(
-        PlayerAccountServiceController playerAccountController,
+        PlayerAccountController playerAccountController,
         @Value("${clemble.service.notification.system.user}") String user,
         @Value("${clemble.service.notification.system.password}") String password,
         @Value("${SYSTEM_NOTIFICATION_SERVICE_HOST}") String host) throws Exception {

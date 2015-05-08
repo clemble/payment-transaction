@@ -19,13 +19,13 @@ import com.clemble.casino.WebMapping;
 import static com.clemble.casino.payment.PaymentWebMapping.*;
 
 @RestController
-public class PlayerAccountServiceController implements PlayerAccountService, ExternalController {
+public class PlayerAccountController implements PlayerAccountService, ExternalController {
 
     final private ServerPlayerAccountService playerAccountService;
     final private ServerAccountService accountTemplate;
 
-    public PlayerAccountServiceController(ServerPlayerAccountService playerAccountService,
-                                          ServerAccountService playerAccountRepository) {
+    public PlayerAccountController(ServerPlayerAccountService playerAccountService,
+                                   ServerAccountService playerAccountRepository) {
         this.playerAccountService = checkNotNull(playerAccountService);
         this.accountTemplate = checkNotNull(playerAccountRepository);
     }
