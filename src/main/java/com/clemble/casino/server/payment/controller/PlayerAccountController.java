@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.*;
 import com.clemble.casino.payment.PlayerAccount;
 import com.clemble.casino.money.Currency;
 import com.clemble.casino.money.Money;
-import com.clemble.casino.server.ExternalController;
+import com.clemble.casino.server.ServerController;
 import com.clemble.casino.server.payment.account.ServerPlayerAccountService;
 import com.clemble.casino.server.payment.repository.ServerAccountService;
 import com.clemble.casino.WebMapping;
 import static com.clemble.casino.payment.PaymentWebMapping.*;
 
 @RestController
-public class PlayerAccountController implements PlayerAccountService, ExternalController {
+public class PlayerAccountController implements PlayerAccountService, ServerController {
 
     final private ServerPlayerAccountService playerAccountService;
     final private ServerAccountService accountTemplate;

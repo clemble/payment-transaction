@@ -39,6 +39,6 @@ public class SystemPaymentFreezeRequestEventListener implements SystemEventListe
 
     @Override
     public String getQueueName() {
-        return SystemPaymentFreezeRequestEvent.CHANNEL + " > payment:transaction:processor";
+        return SystemPaymentFreezeRequestEvent.CHANNEL + " > payment";
     }
 }

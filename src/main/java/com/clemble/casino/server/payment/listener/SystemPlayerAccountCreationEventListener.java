@@ -37,7 +37,7 @@ public class SystemPlayerAccountCreationEventListener implements SystemEventList
 
     @Override
     public String getQueueName() {
-        return SystemPlayerCreatedEvent.CHANNEL + " > payment:construction";
+        return SystemPlayerCreatedEvent.CHANNEL + " > payment";
     }
 
 }

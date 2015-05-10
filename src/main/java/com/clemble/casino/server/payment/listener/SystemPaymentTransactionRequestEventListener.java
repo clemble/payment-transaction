@@ -63,6 +63,6 @@ public class SystemPaymentTransactionRequestEventListener implements SystemEvent
 
     @Override
     public String getQueueName() {
-        return SystemPaymentTransactionRequestEvent.CHANNEL + " > payment:transaction:processor";
+        return SystemPaymentTransactionRequestEvent.CHANNEL + " > payment";
     }
 }
