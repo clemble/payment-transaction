@@ -7,6 +7,8 @@ import com.clemble.casino.server.payment.repository.ServerAccountService;
 import com.clemble.casino.server.player.notification.SystemEventListener;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
+
 /**
  * Created by mavarazy on 16/10/14.
  */
@@ -23,7 +25,7 @@ public class SystemPaymentFreezeRequestEventListener implements SystemEventListe
     }
 
     @Override
-    public void onEvent(SystemPaymentFreezeRequestEvent event) {
+    public void onEvent(@Valid SystemPaymentFreezeRequestEvent event) {
         // Step 0. Validating transaction
         validationService.validate(event.getTransaction());
         // Step 1. Fetching transaction

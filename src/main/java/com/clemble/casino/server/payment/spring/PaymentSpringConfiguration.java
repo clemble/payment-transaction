@@ -8,7 +8,6 @@ import com.clemble.casino.server.payment.listener.SystemPaymentTransactionReques
 import com.clemble.casino.server.payment.listener.SystemPlayerAccountCreationEventListener;
 import com.clemble.casino.server.payment.repository.*;
 import com.clemble.casino.server.player.notification.ServerNotificationService;
-import com.clemble.casino.server.player.notification.SystemNotificationServiceListener;
 import com.clemble.casino.server.spring.common.CommonSpringConfiguration;
 import com.clemble.casino.server.spring.common.MongoSpringConfiguration;
 import com.clemble.casino.server.spring.common.PaymentClientSpringConfiguration;
@@ -80,29 +79,24 @@ public class PaymentSpringConfiguration implements SpringConfiguration {
     @Bean
     public SystemPaymentTransactionRequestEventListener paymentTransactionRequestEventListener(
             ServerAccountService accountTemplate,
-            SystemNotificationServiceListener notificationServiceListener,
             ClembleCasinoValidationService validationService) {
         SystemPaymentTransactionRequestEventListener eventListener = new SystemPaymentTransactionRequestEventListener(accountTemplate, validationService);
-        notificationServiceListener.subscribe(eventListener);
         return eventListener;
     }
 
     @Bean
     public SystemPaymentFreezeRequestEventListener systemPaymentFreezeRequestEventListener(
         ServerAccountService accountTemplate,
-        SystemNotificationServiceListener notificationServiceListener,
         ClembleCasinoValidationService validationService) {
         SystemPaymentFreezeRequestEventListener eventListener = new SystemPaymentFreezeRequestEventListener(accountTemplate, validationService);
-        notificationServiceListener.subscribe(eventListener);
         return eventListener;
     }
 
     @Bean
     public SystemPlayerAccountCreationEventListener systemPlayerAccountCreationEventListener(
-            PlayerAccountRepository accountRepository,
-            SystemNotificationServiceListener notificationServiceListener) {
+            PlayerAccountRepository accountRepository
+    ) {
         SystemPlayerAccountCreationEventListener eventListener = new SystemPlayerAccountCreationEventListener(accountRepository);
-        notificationServiceListener.subscribe(eventListener);
         return eventListener;
     }
 
