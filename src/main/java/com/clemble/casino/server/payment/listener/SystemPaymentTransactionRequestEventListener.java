@@ -49,7 +49,7 @@ public class SystemPaymentTransactionRequestEventListener implements SystemEvent
         LOG.debug("{} start", paymentTransaction.getTransactionKey());
         // Step 1. Sanity check
         if (paymentTransaction == null)
-            throw ClembleCasinoException.fromError(ClembleCasinoError.PaymentTransactionEmpty, PlayerAware.DEFAULT_PLAYER, event.getTransaction().getTransactionKey());
+            throw ClembleCasinoException.fromError(ClembleCasinoError.PaymentTransactionEmpty);
         validationService.validate(paymentTransaction);
         // Step 2. Processing payment transactions
         accountTemplate.process(paymentTransaction);
