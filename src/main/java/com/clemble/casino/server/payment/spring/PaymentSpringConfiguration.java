@@ -1,6 +1,6 @@
 package com.clemble.casino.server.payment.spring;
 
-import com.clemble.casino.error.ClembleCasinoValidationService;
+import com.clemble.casino.error.ClembleValidationService;
 import com.clemble.casino.payment.service.PlayerAccountService;
 import com.clemble.casino.server.payment.account.BasicServerPlayerAccountService;
 import com.clemble.casino.server.payment.listener.SystemPaymentFreezeRequestEventListener;
@@ -79,7 +79,7 @@ public class PaymentSpringConfiguration implements SpringConfiguration {
     @Bean
     public SystemPaymentTransactionRequestEventListener paymentTransactionRequestEventListener(
             ServerAccountService accountTemplate,
-            ClembleCasinoValidationService validationService) {
+            ClembleValidationService validationService) {
         SystemPaymentTransactionRequestEventListener eventListener = new SystemPaymentTransactionRequestEventListener(accountTemplate, validationService);
         return eventListener;
     }
@@ -87,7 +87,7 @@ public class PaymentSpringConfiguration implements SpringConfiguration {
     @Bean
     public SystemPaymentFreezeRequestEventListener systemPaymentFreezeRequestEventListener(
         ServerAccountService accountTemplate,
-        ClembleCasinoValidationService validationService) {
+        ClembleValidationService validationService) {
         SystemPaymentFreezeRequestEventListener eventListener = new SystemPaymentFreezeRequestEventListener(accountTemplate, validationService);
         return eventListener;
     }

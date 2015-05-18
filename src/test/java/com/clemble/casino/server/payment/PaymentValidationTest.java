@@ -1,6 +1,6 @@
 package com.clemble.casino.server.payment;
 
-import com.clemble.casino.error.ClembleCasinoError;
+import com.clemble.casino.error.ClembleErrorCode;
 import com.clemble.casino.money.Currency;
 import com.clemble.casino.money.Money;
 import com.clemble.casino.money.Operation;
@@ -51,7 +51,7 @@ public class PaymentValidationTest {
         // Step 2. Creating appropriate event
         SystemPaymentFreezeRequestEvent event = new SystemPaymentFreezeRequestEvent(transactionKey, new PendingTransaction(transactionKey, Collections.singleton(new PaymentOperation(player, Money.create(Currency.point, 50), Operation.Credit)), null));
         // Step 3. Generating exception conditions
-        expectedException.expect(ClembleCasinoExceptionMatcherFactory.fromErrors(ClembleCasinoError.PaymentTransactionDebitAndCreditNotMatched));
+        expectedException.expect(ClembleCasinoExceptionMatcherFactory.fromErrors(ClembleErrorCode.PaymentTransactionDebitAndCreditNotMatched));
         freezeRequestEventListener.onEvent(event);
     }
 

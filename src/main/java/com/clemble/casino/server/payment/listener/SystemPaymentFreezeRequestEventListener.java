@@ -1,11 +1,10 @@
 package com.clemble.casino.server.payment.listener;
 
-import com.clemble.casino.error.ClembleCasinoValidationService;
+import com.clemble.casino.error.ClembleValidationService;
 import com.clemble.casino.payment.PendingTransaction;
 import com.clemble.casino.server.event.payment.SystemPaymentFreezeRequestEvent;
 import com.clemble.casino.server.payment.repository.ServerAccountService;
 import com.clemble.casino.server.player.notification.SystemEventListener;
-import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 
@@ -15,11 +14,11 @@ import javax.validation.Valid;
 public class SystemPaymentFreezeRequestEventListener implements SystemEventListener<SystemPaymentFreezeRequestEvent> {
 
     final private ServerAccountService accountTemplate;
-    final private ClembleCasinoValidationService validationService;
+    final private ClembleValidationService validationService;
 
     public SystemPaymentFreezeRequestEventListener(
         ServerAccountService accountTemplate,
-        ClembleCasinoValidationService validationService) {
+        ClembleValidationService validationService) {
         this.accountTemplate = accountTemplate;
         this.validationService = validationService;
     }
