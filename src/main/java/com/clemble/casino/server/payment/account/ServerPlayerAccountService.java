@@ -8,8 +8,8 @@ import com.clemble.casino.server.ServerService;
 
 public interface ServerPlayerAccountService extends ServerService {
 
-    public boolean canAfford(String player, Money amount);
+    boolean canAfford(String player, Money amount);
 
-    public List<String> canAfford(Collection<String> players, Money amount);
+    List<String> canAfford(Collection<String> players, Money amount);
 
 }

@@ -7,10 +7,10 @@ import com.clemble.casino.server.ServerService;
 
 public interface ServerAccountService extends ServerService {
 
-    public PlayerAccount findOne(String player);
+    PlayerAccount findOne(String player);
 
-    public PaymentTransaction process(PaymentTransaction transaction);
+    PaymentTransaction process(PaymentTransaction transaction);
 
-    public PendingTransaction freeze(PendingTransaction transaction);
+    PendingTransaction freeze(PendingTransaction transaction);
 
 }

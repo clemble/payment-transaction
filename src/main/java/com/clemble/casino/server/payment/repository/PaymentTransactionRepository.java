@@ -10,10 +10,10 @@ import com.clemble.casino.payment.PaymentTransaction;
 @Repository
 public interface PaymentTransactionRepository extends MongoRepository<PaymentTransaction, String> {
 
-    public List<PaymentTransaction> findByOperationsPlayer(String player);
+    List<PaymentTransaction> findByOperationsPlayer(String player);
 
-    public List<PaymentTransaction> findByOperationsPlayerAndTransactionKey(String player, String transactionKey);
+    List<PaymentTransaction> findByOperationsPlayerAndTransactionKey(String player, String transactionKey);
 
-    public List<PaymentTransaction> findByOperationsPlayerAndTransactionKeyLike(String player, String transactionKey);
+    List<PaymentTransaction> findByOperationsPlayerAndTransactionKeyLike(String player, String transactionKey);
 
 }
